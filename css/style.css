@@ -20,91 +20,140 @@ header nav ul {
 }
 header nav ul li {
     color: #fff;
+    cursor: pointer;
 }
 header nav .header-icon i {
     color: #fff;
 }
-header nav .header-icon i:first-child {
-    margin-right: 18px;
+.header-icon select {
+  height: 35px;
+  background: url('../img/ico-globe.png') no-repeat left;
+  background-size: 20px;
+  padding: 5px 0 5px 20px;
+  outline: 0 none;
+  color: #fff;
+  border: none;
+  margin-right: 20px;
 }
-
+.header-icon select option {
+  background: black;
+  color: #fff;
+  padding: 3px 0;
+}
 .mainVisual {
     margin-bottom: 85px;
 }
 
 /* swiper */
-.swiper {
+.main-banner {
     width: 100%;
     height: 100vh;
-}
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
     position: relative;
-}
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 1000px;
-    object-fit: cover;
-}
-.swiper-slide .inner {
-    position: absolute;
-    text-align: left;
-    bottom: 18%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.swiper-slide div.inner p {
-    color: #eaeaea;
-    font-size: 18px;
-}
-.swiper-slide div.inner h2 {
-    color: #eaeaea;
-    font-weight: 300;
-    font-size: 60px;
-    margin: 22px 0 37px 0;
-    letter-spacing: -3.6px;
-}
-.swiper-slide div.inner h2 span {
     color: #fff;
-    font-weight: 700;
+    background-color: #000; 
 }
-.pg-box {
-    border: 1px solid yellow !important;
-    width: 1420px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 15%;
+.main-banner .swiper-slide {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.pg-box > .inner {
-    border: 1px solid #fff;
-    width: 300px;
+.main-banner .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
-.pg-box span {
+.main-banner .text-group {
+    position: absolute;
+    left: 10%;
+    top: 60%; 
+    bottom: calc(10% + 150px); 
+    z-index: 10;
+    max-width: 800px;
+}
+.main-banner .text-group p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    font-weight: 300;
+    color: #EAEAEA
+}
+.main-banner .text-group h2 {
+    font-size: 3rem;
+    line-height: 1.4;
+    margin-top: 20px;
+    font-weight: 300;
+    color: #EAEAEA;
+}
+
+.main-banner .text-group h2 span {
+    font-weight: 700;
     color: #fff;
 }
-.swiper-button-next {
+.main-banner .control-container {
+    position: absolute;
+    left: 10%;
+    bottom: 10%; 
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.main-banner .index-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.main-banner .index-box .total {
+    opacity: 0.6;
+}
+.main-banner .progress-bar {
+    width: 150px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    position: relative;
+    border-radius: 1px;
+}
+.main-banner .progress-bar .fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #fff;
+    width: 0%;
+    border-radius: 1px;
+    transition: width 0.1s linear;/
+}
+.main-banner .nav-arrows {
+    display: flex;
+    gap: 10px;
+}
+.main-banner .swiper-button-prev,
+.main-banner .swiper-button-next {
+    position: static !important;
     color: #fff !important;
-    border: 1px solid red !important;
+    width: 30px !important; 
+    height: 30px !important;
+    margin: 0 !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
 }
-.swiper-button-prev {
-    color: #fff !important;
-    border: 1px solid red !important;
+.main-banner .swiper-button-prev::after,
+.main-banner .swiper-button-next::after {
+    font-size: 16px;
+    font-weight: bold;
 }
-.swiper-pagination {
-    width: 258px !important;
-    border: 1px solid red !important;
-}
-:root {
-    --swiper-theme-color: #fff !important;
-}
-.swiper-pagination-horizontal {
-    left: 7px !important;
-    top: auto !important;
-    bottom: 15% !important;
+.main-banner :root {
+    --swiper-navigation-size: 30px !important;
 }
 
 /* section01 */
@@ -309,6 +358,7 @@ footer .family-site-select select {
     border: 1px solid #eaeaea;
     width: 230px;
     outline: 0 none;
+    cursor: pointer;
 }
 footer .family-site-select select option {
     background-color: #262626;

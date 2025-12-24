@@ -9,7 +9,7 @@
         <link href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css" rel="stylesheet" />
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
         />
     </head>
     <body>
@@ -24,62 +24,53 @@
                     <li>채용</li>
                 </ul>
                 <div class="header-icon">
-                    <i class="xi-globus"
-                        ><span><img src="./img/ico-arrow-down.png" alt="" /></span
-                    ></i>
+                    <select name="lang" id="lang">
+                        <option value="ko">한국어</option>
+                        <option value="en">ENG</option>
+                    </select>
                     <i class="xi-search"></i>
                 </div>
             </nav>
         </header>
-        <section class="mainVisual">
-            <!-- Swiper -->
-            <div class="swiper mainVisual-banner">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="inner">
-                            <p>Experience our future through innovation</p>
-                            <h2>
-                                고객의 <span>디지털 혁신 여정</span>과 <br />
-                                <span>비즈니스 성장</span>을 함께 합니다
-                            </h2>
-                            <!-- <div class="progress-box inner">
-                                <span class="page-num">01</span>
-                                <div class="swiper-pagination progress"></div>
-                                <span>02</span>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                            </div> -->
-                        </div>
-                        <img src="./img/main01.png" alt="mainVisual" />
+        <!-- mainVisual -->
+        <div class="swiper main-banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./img/main01.png" alt="Doosan Slide 1" />
+                    <div class="text-group">
+                        <p>Experience our future through innovation</p>
+                        <h2>
+                            고객의 <span>디지털 혁신 여정</span>과<br /><span>비즈니스 성장</span>을
+                            함께 합니다
+                        </h2>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="inner">
-                            <p>Experience our future through innovation</p>
-                            <h2>
-                                미래를 준비하는 <span>두산</span>, <br />
-                                <span>세상의 미래</span>를 만들어나갑니다
-                            </h2>
-                            <!-- <div class="progress-box inner">
-                                <span class="page-num">02</span>
-                                <div class="swiper-pagination progress"></div>
-                                <span>02</span>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                            </div> -->
-                        </div>
-                        <img src="./img/main02.png" alt="mainVisual" />
-                    </div>
-                    <div class="pg-box">
-                        <span class="page-num">01</span>
-                        <div class="swiper-pagination progress"></div>
-                        <span>02</span>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/main02.png" alt="Doosan Slide 2" />
+                    <div class="text-group">
+                        <p>New possibilities, new challenges</p>
+                        <h2>
+                            미래를 준비하는 <span>두산</span><br /><span>세상의 미래</span>를
+                            만들어나갑니다
+                        </h2>
                     </div>
                 </div>
             </div>
-            <!-- //swiper -->
-        </section>
+
+            <div class="control-container">
+                <div class="index-box">
+                    <span class="current">01</span>
+                    <div class="progress-bar">
+                        <div class="fill"></div>
+                    </div>
+                    <span class="total">02</span>
+                </div>
+                <div class="nav-arrows">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
         <!-- //mainVisual -->
 
         <section class="sec01">
@@ -391,7 +382,7 @@
         <!-- //footer -->
 
         <!-- JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="./js/script.js"></script>
     </body>
 </html>
