@@ -14,6 +14,9 @@ header nav {
     justify-content: space-between;
     height: 70px;
 }
+header nav .ci-blue{
+    display: none;
+}
 header nav ul {
     display: flex;
     gap: 110px;
@@ -34,23 +37,65 @@ header nav .header-icon i {
   color: #fff;
   border: none;
   margin-right: 20px;
+cursor: pointer;
 }
 .header-icon select option {
   background: black;
   color: #fff;
   padding: 3px 0;
+  cursor: pointer;
 }
+.xi-search{cursor: pointer;}
 .mainVisual {
     margin-bottom: 85px;
 }
 
-/* swiper */
+header:hover{  
+  background-color: rgba(255, 255, 255, 0.6); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease-in-out;
+}
+header:hover nav .ci-blue{
+    display: block;
+}
+header:hover nav .ci-wh{
+    display: none;
+}
+header:hover nav ul li{
+    color: #101010;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+header:hover nav ul li:hover{
+    color: #005EB8;
+    font-weight: 600;
+}
+header:hover nav .header-icon i{
+    color: #101010;
+    font-weight: 600;
+}
+header:hover nav select{
+    color: #101010;
+    background: url('../img/ico-globe-bl.png') no-repeat left;
+    height: 35px;
+    background-size: 20px;
+    padding: 5px 0 5px 20px;
+    outline: 0 none;
+    border: none;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* main-visual swiper */
 .main-banner {
     width: 100%;
     height: 100vh;
     position: relative;
     color: #fff;
     background-color: #000; 
+    margin-bottom: 85px;
 }
 .main-banner .swiper-slide {
     display: flex;
@@ -177,9 +222,16 @@ header nav .header-icon i {
 }
 .about .inner .btn-box i {
     font-size: x-large;
+    cursor: pointer;
 }
 .about .inner .btn-box i:first-child {
     margin-right: 14px;
+}
+.about-prev.swiper-button-disabled,
+.about-next.swiper-button-disabled {
+    opacity: 0.2;
+    pointer-events: none;
+    cursor: default;
 }
 .about .slider-title {
     margin-top: 20px;
@@ -191,6 +243,23 @@ header nav .header-icon i {
     margin: auto;
     overflow: hidden;
 }
+/* section01 > about-slider */
+.sec01 .slider-container {
+    width: 1420px;
+    margin: 0 auto;
+    position: relative;
+}
+.sec01 .about-slider {
+    width: 100%; 
+}
+.sec01 .about-slider .swiper-slide {
+    width: 970px;
+}
+.sec01 .about-slider .swiper-slide img {
+    width: 100%;
+    display: block;
+}
+
 /* section2 */
 .sec02 {
     padding: 85px 0;
@@ -200,16 +269,28 @@ header nav .header-icon i {
 }
 .sec02 .business-list {
     display: flex;
+    width: 100%;
+    height: 693px;
+    overflow: hidden;
 }
 .sec02 .business-list .bus-box {
-    width: 284px;
-    height: 694px;
-    overflow: hidden;
+    flex: 1;
+    height: 100%;
     position: relative;
-    height: 693px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    overflow: hidden;
+    filter: brightness(1);
+    transition: flex 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s;
+}
+.sec02 .business-list:hover .bus-box {
+    filter: brightness(0.5);
+}
+.sec02 .business-list .bus-box:hover {
+    flex: 10;
+    filter: brightness(1);
+    z-index: 10;
 }
 .sec02 .business-list .bus-box:nth-child(1) {
     background-image: url('../img/business01.png');
@@ -234,6 +315,7 @@ header nav .header-icon i {
     padding: 60px 30px;
     background: #000000;
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    white-space: nowrap;
 }
 .sec02 .business-list .bus-box .txt-box h4 {
     color: #fff;
@@ -249,9 +331,19 @@ header nav .header-icon i {
     padding-bottom: 10px;
 }
 .sec03 .certi-list {
-    margin-top: 47px;
     display: flex;
-    gap: 47px;
+    gap: 20px;
+    padding-right: 20px;
+}
+.certi-rolling-container {
+    margin-top: 47px;
+    width: 100%;
+    overflow: hidden;
+}
+.certi-list-wrapper {
+    display: flex;
+    width: max-content;
+    animation: rollingLoop 40s linear infinite; 
 }
 .sec03 .certi-list .certi-box {
     width: 250px;
@@ -259,6 +351,8 @@ header nav .header-icon i {
     border-radius: 10px;
     border: 1px solid #e0e0e0;
     flex: none;
+    box-sizing: border-box;
+    user-select: none;
 }
 .sec03 .certi-list .certi-box div:first-child {
     height: 150px;
@@ -269,7 +363,21 @@ header nav .header-icon i {
     border-top: 1px solid #e0e0e0;
     padding: 16px 20px;
 }
+@keyframes rollingLoop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.certi-rolling-container:hover .certi-list-wrapper {
+    animation-play-state: paused;
+}
 /* section04 */
+.sec04{
+    padding: 85px 0 170px 0;
+}
 .sec04 .inner {
     display: flex;
     justify-content: space-between;
@@ -277,6 +385,7 @@ header nav .header-icon i {
 .sec04 .title p {
     color: #7c7c7c;
     margin-top: 11px;
+    cursor: pointer;
 }
 .sec04 .title p span {
     vertical-align: sub;
@@ -291,6 +400,14 @@ header nav .header-icon i {
     justify-content: space-between;
     padding: 30px 0;
     border-bottom: 1px solid #e0e0e0;
+}
+.sec04 .news-list li p{
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.sec04 .news-list li p:hover{
+    color: #005EB8;
+    padding-left: 10px;
 }
 .sec04 .news-list li p:first-child {
     font-weight: 700;
@@ -350,17 +467,40 @@ footer .r-side {
 footer .r-side .sns-links a:not(:first-child) {
     margin-left: 14px;
 }
-footer .family-site-select select {
-    background: none;
-    height: 50px;
-    padding: 13px 25px;
+.family-site-select {
+    position: relative;
+    width: 220px;
+    display: inline-block;
+}
+#family-select {
+    width: 100%;
+    height: 45px;
+    padding: 13px 30px;
+    
+    /* 기본 화살표 제거 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    border: 1px solid #EAEAEA;
+    background-color: #303030;
     color: #eaeaea;
-    border: 1px solid #eaeaea;
-    width: 230px;
-    outline: 0 none;
     cursor: pointer;
+    outline: none;
+}
+.family-site-select::after {
+    content: '';
+    position: absolute;
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;  
+    height: 10px;
+    background: url('../img/ico-arrow-down.png') no-repeat center;
+    pointer-events: none; 
 }
 footer .family-site-select select option {
     background-color: #262626;
     padding: 20px 10px;
+    color: #EAEAEA;
 }

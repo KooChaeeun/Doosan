@@ -1,4 +1,4 @@
-// Swiper
+// main-visual
 const swiper = new Swiper('.main-banner', {
     loop: true,
     autoplay: {
@@ -41,5 +41,18 @@ const swiper = new Swiper('.main-banner', {
         ).length;
         current.innerText = '01';
         total.innerText = totalSlides < 10 ? '0' + totalSlides : totalSlides;
+    },
+});
+
+// about
+const aboutSwiper = new Swiper('.about-slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,     
+    loop: false,
+    simulateTouch: true,
+    grabCursor: true,           
+    navigation: {
+        nextEl: '.about-next',
+        prevEl: '.about-prev',
     },
 });

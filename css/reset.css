@@ -140,6 +140,7 @@ body {
     color: #101010;
     font-family: 'Pretendard';
     min-width: 1420px;
+    overflow-x: hidden;
 }
 
 a {
