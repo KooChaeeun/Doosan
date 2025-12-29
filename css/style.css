@@ -41,16 +41,11 @@ header nav .header-icon i {
 cursor: pointer;
 }
 .header-icon select option {
-  background: black;
+  background: #101010;
   color: #fff;
   padding: 3px 0;
-  cursor: pointer;
 }
 .xi-search{cursor: pointer;}
-.mainVisual {
-    margin-bottom: 85px;
-}
-
 header:hover{  
   background-color: rgba(255, 255, 255, 0.6); 
   backdrop-filter: blur(10px);
@@ -90,6 +85,9 @@ header:hover nav select{
 }
 
 /* main-visual swiper */
+.mainVisual {
+    margin-bottom: 85px;
+}
 .main-banner {
     width: 100%;
     height: 100vh;
@@ -134,7 +132,6 @@ header:hover nav select{
     font-weight: 300;
     color: #EAEAEA;
 }
-
 .main-banner .text-group h2 span {
     font-weight: 700;
     color: #fff;
@@ -154,9 +151,6 @@ header:hover nav select{
     gap: 15px;
     font-size: 1.1rem;
     font-weight: 400;
-}
-.main-banner .index-box .total {
-    opacity: 0.6;
 }
 .main-banner .progress-bar {
     width: 150px;
