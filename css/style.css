@@ -1,3 +1,4 @@
+body{position: relative;}
 /*header*/
 header {
     width: 100%;
@@ -141,7 +142,7 @@ header:hover nav select{
 .main-banner .control-container {
     position: absolute;
     left: 10%;
-    bottom: 10%; 
+    bottom: 14%; 
     z-index: 20;
     display: flex;
     align-items: center;
@@ -345,6 +346,14 @@ header:hover nav select{
     width: max-content;
     animation: rollingLoop 40s linear infinite; 
 }
+@keyframes rollingLoop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 .sec03 .certi-list .certi-box {
     width: 250px;
     height: 250px;
@@ -362,14 +371,6 @@ header:hover nav select{
 .sec03 .certi-list .certi-box div:last-child {
     border-top: 1px solid #e0e0e0;
     padding: 16px 20px;
-}
-@keyframes rollingLoop {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
 }
 .certi-rolling-container:hover .certi-list-wrapper {
     animation-play-state: paused;
@@ -503,4 +504,26 @@ footer .family-site-select select option {
     background-color: #262626;
     padding: 20px 10px;
     color: #EAEAEA;
+}
+.sticky-wrapper {
+  position: absolute;
+  top: 1500px; 
+  bottom: 0;
+  right: 50px;
+  width: 50px;
+  pointer-events: none; 
+  z-index: 100;
+}
+.top-btn {
+  position: sticky;
+  top: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #005EB8;
+  color: white;
+  border-radius: 50%;
+  pointer-events: auto;
 }
